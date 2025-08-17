@@ -32,76 +32,16 @@ function App() {
           <Routes>
             {/* Frontend Routes */}
             <Route path="/" element={<Home />} />
-            <Route path="/catalog" element={
-              <>
-                <Navbar />
-                <Catalog />
-                <Footer />
-              </>
-            } />
-            <Route path="/product/:id" element={
-              <>
-                <Navbar />
-                <ProductDetail />
-                <Footer />
-              </>
-            } />
-            <Route path="/cart" element={
-              <>
-                <Navbar />
-                <Cart />
-                <Footer />
-              </>
-            } />
-            <Route path="/checkout" element={
-              <>
-                <Navbar />
-                <Checkout />
-                <Footer />
-              </>
-            } />
-            <Route path="/education" element={
-              <>
-                <Navbar />
-                <Education />
-                <Footer />
-              </>
-            } />
-            <Route path="/blog" element={
-              <>
-                <Navbar />
-                <Blog />
-                <Footer />
-              </>
-            } />
-            <Route path="/blog/:id" element={
-              <>
-                <Navbar />
-                <BlogPost />
-                <Footer />
-              </>
-            } />
-            <Route path="/orders" element={
-              <>
-                <Navbar />
-                <OrderHistory />
-                <Footer />
-              </>
-            } />
-            <Route path="/about" element={
-              <>
-                <Navbar />
-                <About />
-                <Footer />
-              </>
-            } />
-            <Route path="/contact" element={
-              <>
-                <Navbar />
-                <Contact />
-                <Footer />
-              </>
-            } />
+            <Route path="/catalog" element={<Catalog />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/education" element={<Education />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogPost />} />
+            <Route path="/orders" element={<OrderHistory />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
 
             {/* Admin Routes */}
               <Route path="/admin" element={<AdminDashboard />} />

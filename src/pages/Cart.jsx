@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import ScrollToTop from '../components/ScrollToTop';
 
 const Cart = () => {
   const { items, updateQuantity, removeFromCart, getTotalPrice, getTotalItems } = useCart();
@@ -43,6 +46,8 @@ const Cart = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">
+      <Navbar/>
+      <ScrollToTop/>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
@@ -178,6 +183,7 @@ const Cart = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

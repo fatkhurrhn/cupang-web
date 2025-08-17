@@ -1,5 +1,8 @@
 import { useParams, Link } from 'react-router-dom';
 import { blogPosts } from '../data/blog';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import ScrollToTop from '../components/ScrollToTop';
 
 const BlogPost = () => {
   const { id } = useParams();
@@ -26,6 +29,8 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Navbar/>
+      <ScrollToTop/>
       {/* Breadcrumb */}
       <nav className="bg-gray-50 py-4">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -186,6 +191,7 @@ const BlogPost = () => {
           </Link>
         </div>
       </article>
+      <Footer/>
     </div>
   );
 };

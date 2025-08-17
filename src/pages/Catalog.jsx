@@ -1,6 +1,9 @@
 import { useState, useMemo } from 'react';
 import { products, categories } from '../data/products';
 import ProductCard from '../components/ProductCard';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import ScrollToTop from '../components/ScrollToTop';
 
 const Catalog = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -58,6 +61,8 @@ const Catalog = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Navbar/>
+      <ScrollToTop/>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
@@ -211,6 +216,7 @@ const Catalog = () => {
           </div>
         )}
       </div>
+      <Footer/>
     </div>
   );
 };

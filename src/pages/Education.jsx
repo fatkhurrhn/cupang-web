@@ -1,3 +1,7 @@
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import ScrollToTop from '../components/ScrollToTop';
+
 const Education = () => {
   const careGuides = [
     {
@@ -140,6 +144,8 @@ const Education = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Navbar/>
+      <ScrollToTop/>
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -348,6 +354,7 @@ const Education = () => {
           </div>
         </div>
       </section>
+      <Footer/>
     </div>
   );
 };

@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { blogPosts, blogCategories } from '../data/blog';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import ScrollToTop from '../components/ScrollToTop';
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -20,6 +23,8 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Navbar/>
+      <ScrollToTop/>
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -218,6 +223,7 @@ const Blog = () => {
           </div>
         )}
       </div>
+      <Footer/>
     </div>
   );
 };
