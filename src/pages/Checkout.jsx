@@ -59,7 +59,7 @@ const Checkout = () => {
 
       // Generate WhatsApp message
       const message = generateWhatsAppMessage(order, formData, items);
-      const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`;
+      const whatsappUrl = `https://wa.me/6282285512813?text=${encodeURIComponent(message)}`;
       
       // Open WhatsApp
       window.open(whatsappUrl, '_blank');
@@ -126,6 +126,8 @@ const Checkout = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">
+      <Navbar/>
+      <ScrollToTop/>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
@@ -335,6 +337,7 @@ const Checkout = () => {
           </div>
         </form>
       </div>
+      <Footer/>
     </div>
   );
 };

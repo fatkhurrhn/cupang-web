@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useOrders } from '../context/OrderContext';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import ScrollToTop from '../components/ScrollToTop';
 
 const OrderHistory = () => {
   const location = useLocation();
@@ -55,13 +58,15 @@ const OrderHistory = () => {
     }
   };
 
-  const filteredOrders = orders.filter(order => 
+  const filteredOrders = orders.filter(order =>
     order.orderNumber.toLowerCase().includes(searchTerm.toLowerCase()) ||
     order.customerInfo.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gray-50">
+      <Navbar />
+      <ScrollToTop />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Success Message */}
         {orderSuccess && (
@@ -136,8 +141,8 @@ const OrderHistory = () => {
                       <div className="space-y-3">
                         {order.items.map((item) => (
                           <div key={item.id} className="flex items-center space-x-4">
-                            <img 
-                              src={item.image} 
+                            <img
+                              src={item.image}
                               alt={item.name}
                               className="w-16 h-16 object-cover rounded-lg flex-shrink-0"
                             />
@@ -205,14 +210,14 @@ const OrderHistory = () => {
                       <i className="ri-whatsapp-line mr-1"></i>
                       Hubungi Via WhatsApp
                     </button>
-                    
+
                     {order.status === 'shipped' && (
                       <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
                         <i className="ri-truck-line mr-1"></i>
                         Lacak Pengiriman
                       </button>
                     )}
-                    
+
                     {order.status === 'pending' && (
                       <button className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors text-sm font-medium">
                         <i className="ri-close-line mr-1"></i>
@@ -231,13 +236,13 @@ const OrderHistory = () => {
               {searchTerm ? 'Tidak ada pesanan ditemukan' : 'Belum ada pesanan'}
             </h3>
             <p className="text-gray-500 mb-6">
-              {searchTerm 
+              {searchTerm
                 ? 'Coba ubah kata kunci pencarian Anda'
                 : 'Pesanan Anda akan muncul di sini setelah melakukan pembelian'
               }
             </p>
             {!searchTerm && (
-              <a 
+              <a
                 href="/catalog"
                 className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium inline-flex items-center"
               >
@@ -248,6 +253,7 @@ const OrderHistory = () => {
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 };

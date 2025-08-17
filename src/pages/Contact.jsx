@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import ScrollToTop from '../components/ScrollToTop';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -99,6 +102,8 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Navbar/>
+      <ScrollToTop/>
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-teal-600 to-blue-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -323,6 +328,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };
