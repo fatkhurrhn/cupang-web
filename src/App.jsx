@@ -31,13 +31,7 @@ function App() {
         <div className="min-h-screen bg-white">
           <Routes>
             {/* Frontend Routes */}
-            <Route path="/" element={
-              <>
-                <Navbar />
-                <Home />
-                <Footer />
-              </>
-            } />
+            <Route path="/" element={<Home />} />
             <Route path="/catalog" element={
               <>
                 <Navbar />

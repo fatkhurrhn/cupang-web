@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom';
 import { products } from '../data/products';
 import { blogPosts } from '../data/blog';
 import ProductCard from '../components/ProductCard';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import ScrollToTop from '../components/ScrollToTop';
 
 const Home = () => {
   const featuredProducts = products.filter(product => product.featured).slice(0, 3);
@@ -17,6 +20,8 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
+      <Navbar/>
+      <ScrollToTop />
       <section className="relative bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div className="absolute inset-0 bg-black opacity-20"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
@@ -191,6 +196,7 @@ const Home = () => {
           </Link>
         </div>
       </section>
+      <Footer/>
     </div>
   );
 };
