@@ -18,7 +18,6 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 
 // Admin Components
-import AdminLayout from './admin/AdminLayout';
 import AdminDashboard from './admin/pages/Dashboard';
 import AdminProducts from './admin/pages/Products';
 import AdminOrders from './admin/pages/Orders';
@@ -111,13 +110,11 @@ function App() {
             } />
 
             {/* Admin Routes */}
-            <Route path="/admin" element={<AdminLayout />}>
-              <Route index element={<AdminDashboard />} />
-              <Route path="products" element={<AdminProducts />} />
-              <Route path="orders" element={<AdminOrders />} />
-              <Route path="blog" element={<AdminBlog />} />
-              <Route path="customers" element={<AdminCustomers />} />
-            </Route>
+              <Route path="/admin" element={<AdminDashboard />} />
+              <Route path="/admin/products" element={<AdminProducts />} />
+              <Route path="/admin/orders" element={<AdminOrders />} />
+              <Route path="/admin/blog" element={<AdminBlog />} />
+              <Route path="/admin/customers" element={<AdminCustomers />} />
           </Routes>
         </div>
       </OrderProvider>
